@@ -57,6 +57,8 @@ public class SetupContract {
 
 		void setSettingNamingFormat(String namingKey);
 
+		void setSettingInputType(String inputType);
+
 		void setSettingRecordingFormat(String formatKey);
 
 		void executeFirstRun();

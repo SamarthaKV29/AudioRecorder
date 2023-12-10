@@ -162,6 +162,7 @@
 	<string name="moving_record">Moving record: %s</string>
 	<string name="moving_record_cancel">Moving canceled</string>
 	<string name="move_records_info">Some of your records still stored in the public storage. Soon the public storage will become not available for the app. We need to move that records to the app\'s private directory.</string>
+	<string name="info_input_type">You can use external mics to record</string>
 	<string name="info_format"><b>M4a</b> format is encoded with AAC audio codec has good quality and small size. <b>(recommended)</b>
 		\n<b>Wav</b> is uncompressed audio data format. It takes much more space than other formats. It\'s needed for specific cases.
 		\n<b>3gp</b> is a multimedia container format developed for mobile telecommunication services. Use it if you need to save space.
@@ -255,6 +256,12 @@
 		<item>Theme Brown</item>
 	</string-array>
 
+	<string-array name="inputs">
+		<item>Built-In</item>
+		<item>Bluetooth</item>
+		<item>USB</item>
+	</string-array>
+
 	<string-array name="formats2">
 		<item>M4a</item>
 		<item>Wav</item>
@@ -285,4 +292,5 @@
 	</string-array>
 
 	<string name="app_widget_description">Start recording widget</string>
+	<string name="recording_device">Recording Device:</string>
 </resources>

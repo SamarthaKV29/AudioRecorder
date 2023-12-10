@@ -19,8 +19,12 @@ package com.dimowner.audiorecorder.data;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
+import android.util.Log;
 
 import com.dimowner.audiorecorder.AppConstants;
+import com.dimowner.audiorecorder.R;
+import com.dimowner.audiorecorder.app.settings.SettingsActivity;
+import com.dimowner.audiorecorder.util.AndroidUtils;
 
 /**
  * App preferences implementation
@@ -51,6 +55,8 @@ public class PrefsImpl implements Prefs {
 	private static final String PREF_KEY_RECORD_CHANNEL_COUNT = "record_channel_count";
 
 	private static final String PREF_KEY_SETTING_THEME_COLOR = "setting_theme_color";
+
+	private static final String PREF_KEY_SETTING_INPUT_TYPE = "setting_input_type";
 	private static final String PREF_KEY_SETTING_RECORDING_FORMAT = "setting_recording_format";
 	private static final String PREF_KEY_SETTING_BITRATE = "setting_bitrate";
 	private static final String PREF_KEY_SETTING_SAMPLE_RATE = "setting_sample_rate";
@@ -345,6 +351,18 @@ public class PrefsImpl implements Prefs {
 	@Override
 	public String getSettingNamingFormat() {
 		return sharedPreferences.getString(PREF_KEY_SETTING_NAMING_FORMAT, AppConstants.DEFAULT_NAME_FORMAT);
+	}
+
+	@Override
+	public void setSettingInputType(String inputType) {
+		SharedPreferences.Editor editor = sharedPreferences.edit();
+		editor.putString(PREF_KEY_SETTING_INPUT_TYPE, inputType);
+		editor.apply();
+	}
+
+	@Override
+	public String getSettingInputType() {
+		return sharedPreferences.getString(PREF_KEY_SETTING_INPUT_TYPE, AppConstants.DEFAULT_INPUT_TYPE);
 	}
 
 	@Override

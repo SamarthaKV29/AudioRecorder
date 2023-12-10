@@ -308,6 +308,11 @@
 		</LinearLayout>
 
 		<com.dimowner.audiorecorder.app.widget.SettingView
+			android:id="@+id/setting_input_source"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+
+		<com.dimowner.audiorecorder.app.widget.SettingView
 				android:id="@+id/setting_recording_format"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content" />

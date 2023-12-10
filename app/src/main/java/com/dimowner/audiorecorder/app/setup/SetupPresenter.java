@@ -146,6 +146,9 @@ public class SetupPresenter implements SetupContract.UserActionsListener {
 	}
 
 	@Override
+	public void setSettingInputType(String inputType) { prefs.setSettingInputType(inputType); }
+
+	@Override
 	public void setSettingRecordingFormat(String formatKey) {
 		prefs.setSettingRecordingFormat(formatKey);
 		updateRecordingFormat(formatKey);

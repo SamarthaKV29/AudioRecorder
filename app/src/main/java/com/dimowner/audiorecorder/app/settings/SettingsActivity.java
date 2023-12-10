@@ -76,6 +76,7 @@ public class SettingsActivity extends Activity implements SettingsContract.View,
 
 	private Spinner nameFormatSelector;
 
+	private SettingView inputSourceSetting;
 	private SettingView formatSetting;
 	private SettingView sampleRateSetting;
 	private SettingView bitrateSetting;
@@ -157,6 +158,20 @@ public class SettingsActivity extends Activity implements SettingsContract.View,
 
 		swKeepScreenOn.setOnCheckedChangeListener((btn, isChecked) -> presenter.keepScreenOn(isChecked));
 		swAskToRename.setOnCheckedChangeListener((btn, isChecked) -> presenter.askToRenameAfterRecordingStop(isChecked));
+
+		inputSourceSetting = findViewById(R.id.setting_input_source);
+		inputSourceSetting.setData(
+				getResources().getStringArray(R.array.inputs),
+				new String[] {
+						AppConstants.INPUT_TYPE_BUILT_IN,
+						AppConstants.INPUT_TYPE_BLUETOOTH,
+						AppConstants.INPUT_TYPE_USB
+				}
+		);
+		inputSourceSetting.setTitle(getString(R.string.recording_device));
+		inputSourceSetting.setOnChipCheckListener((key, name, checked) -> presenter.setSettingInputType(key));
+		inputSourceSetting.setOnInfoClickListener(v -> AndroidUtils.showInfoDialog(SettingsActivity.this, R.string.info_input_type));
+
 
 		formatSetting = findViewById(R.id.setting_recording_format);
 		formats = getResources().getStringArray(R.array.formats2);
@@ -445,6 +460,9 @@ public class SettingsActivity extends Activity implements SettingsContract.View,
 	public void showRecordingSampleRate(int rate) {
 		sampleRateSetting.setSelected(SettingsMapper.sampleRateToKey(rate));
 	}
+
+	@Override
+	public void showInputType(String inputType) { inputSourceSetting.setSelected(inputType); }
 
 	@Override
 	public void showRecordingFormat(String formatKey) {

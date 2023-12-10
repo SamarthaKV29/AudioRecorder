@@ -141,4 +141,9 @@ public class AppConstants {
 	public final static int RECORD_BYTES_PER_SECOND = RECORD_ENCODING_BITRATE_48000 /8; //bits per sec converted to bytes per sec.
 	public final static int MIGRATE_PUBLIC_STORAGE_WARNING_COOLDOWN_MILLS = 12*60*60*1000; //12 hours
 
+	public final static String INPUT_TYPE_BUILT_IN = "Built-In";
+	public final static String INPUT_TYPE_BLUETOOTH = "BT";
+	public final static String INPUT_TYPE_USB = "Usb";
+	public final static String DEFAULT_INPUT_TYPE = INPUT_TYPE_BUILT_IN;
+
 }

@@ -40,6 +40,8 @@ public class SettingsContract {
 
 		void showRecordingSampleRate(int rate);
 
+		void showInputType(String inputType);
+
 		void showRecordingFormat(String formatKey);
 
 		void showNamingFormat(String namingKey);
@@ -93,6 +95,8 @@ public class SettingsContract {
 		void setSettingThemeColor(String colorKey);
 
 		void setSettingNamingFormat(String namingKey);
+
+		void setSettingInputType(String inputType);
 
 		void setSettingRecordingFormat(String formatKey);
 

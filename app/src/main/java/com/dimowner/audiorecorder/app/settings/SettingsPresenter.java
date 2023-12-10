@@ -119,6 +119,7 @@ public class SettingsPresenter implements SettingsContract.UserActionsListener {
 			view.showNamingFormat(prefs.getSettingNamingFormat());
 			view.showRecordingBitrate(prefs.getSettingBitrate());
 			view.showRecordingSampleRate(prefs.getSettingSampleRate());
+			view.showInputType(prefs.getSettingInputType());
 			//This is needed for scoped storage support
 			view.showDirectorySetting(prefs.isShowDirectorySetting());
 		}
@@ -172,6 +173,9 @@ public class SettingsPresenter implements SettingsContract.UserActionsListener {
 	public void setSettingNamingFormat(String namingKey) {
 		prefs.setSettingNamingFormat(namingKey);
 	}
+
+	@Override
+	public void setSettingInputType(String inputType) { prefs.setSettingInputType(inputType); }
 
 	@Override
 	public void setSettingRecordingFormat(String formatKey) {
